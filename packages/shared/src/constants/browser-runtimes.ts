@@ -35,9 +35,9 @@ export const BUNDLED_BROWSER_RUNTIME_MANIFEST: BrowserRuntimeManifest = {
       kernelApiType: 'Firefox',
       platforms: {
         'win32-x64': {
-          version: '128.0.0.0',
-          kernelMajor: '128',
-          executable: 'FlowerBrowser.exe',
+          version: '150.0.3',
+          kernelMajor: '150',
+          executable: 'flowerbrowser.exe',
           importCandidates: [
             '%LOCALAPPDATA%/FlowerBrowser/FlowerBrowser.exe',
             '%PROGRAMFILES%/FlowerBrowser/FlowerBrowser.exe',

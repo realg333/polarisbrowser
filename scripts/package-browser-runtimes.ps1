@@ -13,7 +13,7 @@ param(
   [string]$FlowerKernelDir = "",
   [string]$OutputDir = "dist\runtime-packages",
   [string]$SunVersion = "148.0.7778.97",
-  [string]$FlowerVersion = "128.0.0.0"
+  [string]$FlowerVersion = "150.0.3"
 )
 
 $ErrorActionPreference = "Stop"
@@ -92,10 +92,10 @@ if (-not $SunKernelDir) {
 }
 
 if (-not $FlowerKernelDir) {
-  $latestFlower = Get-LatestKernelDir $cwdGlobal "firefox_" @('FlowerBrowser.exe', 'flowerbrowser.exe')
+  $latestFlower = Get-LatestKernelDir $cwdGlobal "flower_" @('flowerbrowser.exe', 'FlowerBrowser.exe')
   if ($latestFlower) {
     $FlowerKernelDir = $latestFlower.Path
-    Write-Host "Flower Browser: $($latestFlower.Path) (firefox_$($latestFlower.Num))"
+    Write-Host "Flower Browser: $($latestFlower.Path) (flower_$($latestFlower.Num))"
   }
 }
 

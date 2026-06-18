@@ -32,9 +32,9 @@
       "kernelApiType": "Firefox",
       "platforms": {
         "win32-x64": {
-          "version": "128.0.0.0",
-          "kernelMajor": "128",
-          "executable": "FlowerBrowser.exe",
+          "version": "150.0.3",
+          "kernelMajor": "150",
+          "executable": "flowerbrowser.exe",
           "downloadUrl": "",
           "importCandidates": [
             "%LOCALAPPDATA%/FlowerBrowser/FlowerBrowser.exe",

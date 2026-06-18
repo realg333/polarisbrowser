@@ -25,7 +25,7 @@ const EXECUTABLE_ALIASES: Record<AntidetectEngine, string[]> = {
 
 const KERNEL_DIR_PREFIX: Record<AntidetectEngine, string> = {
   sunbrowser: 'chrome_',
-  flowerbrowser: 'firefox_',
+  flowerbrowser: 'flower_',
 };
 
 export function findExecutableInDir(
