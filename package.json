@@ -1,0 +1,33 @@
+{
+  "name": "polaris-browser",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Polaris Browser — multi-profile browser management platform",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/realg333/polarisbrowser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/realg333/polarisbrowser/issues"
+  },
+  "homepage": "https://github.com/realg333/polarisbrowser#readme",
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:desktop": "turbo dev --filter=@polaris/desktop",
+    "dev:api": "turbo dev --filter=@polaris/api",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "update-chrome-versions": "npx tsx scripts/update-chrome-versions.ts",
+    "package-browser-runtimes": "powershell -ExecutionPolicy Bypass -File scripts/package-browser-runtimes.ps1"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

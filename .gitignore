@@ -1,0 +1,17 @@
+node_modules
+dist
+out
+release
+.turbo
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.log
+coverage
+.vscode/*
+!.vscode/extensions.json
+*.tsbuildinfo
+electron-vite.config.*.mjs

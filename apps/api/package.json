@@ -1,0 +1,29 @@
+{
+  "name": "@polaris/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup src/index.ts --format esm",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@polaris/database": "workspace:*",
+    "@polaris/shared": "workspace:*",
+    "@supabase/supabase-js": "^2.50.2",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.44.2",
+    "fastify": "^5.4.0",
+    "postgres": "^3.4.7",
+    "stripe": "^18.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.32",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

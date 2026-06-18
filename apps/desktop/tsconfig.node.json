@@ -1,0 +1,54 @@
+{
+
+  "compilerOptions": {
+
+    "target": "ES2022",
+
+    "lib": ["ES2022"],
+
+    "composite": true,
+
+    "module": "ESNext",
+
+    "moduleResolution": "bundler",
+
+    "allowSyntheticDefaultImports": true,
+
+    "esModuleInterop": true,
+
+    "resolveJsonModule": true,
+
+    "isolatedModules": true,
+
+    "strict": true,
+
+    "skipLibCheck": true,
+
+    "noEmit": true,
+
+    "baseUrl": ".",
+
+    "paths": {
+
+      "@polaris/shared": ["../../packages/shared/src/index.ts"]
+
+    },
+
+    "types": ["electron-vite/node", "node"]
+
+  },
+
+  "include": [
+
+    "electron.vite.config.*",
+
+    "src/main/**/*",
+
+    "src/preload/**/*",
+
+    "../../packages/shared/src/**/*"
+
+  ]
+
+}
+

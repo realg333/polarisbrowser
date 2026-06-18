@@ -1,0 +1,358 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 199 92% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222 40% 18%;
+    --muted: 210 32% 93%;
+    --muted-foreground: 215 19% 42%;
+    --accent: 199 80% 92%;
+    --accent-foreground: 199 90% 26%;
+    --destructive: 358 72% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 62% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 32 92% 44%;
+    --border: 214 28% 86%;
+    --input: 214 26% 84%;
+    --ring: 199 92% 45%;
+    --radius: 0.85rem;
+
+    --sidebar: 210 40% 97%;
+    --sidebar-foreground: 222 40% 16%;
+    --sidebar-accent: 199 80% 92%;
+    --sidebar-border: 214 28% 86%;
+
+    --aurora-1: 199 95% 52%;
+    --aurora-2: 256 90% 64%;
+    --aurora-3: 158 78% 44%;
+    --polar-glow: 199 95% 60%;
+
+    --glass-bg: 0 0% 100%;
+    --glass-bg-opacity: 0.72;
+    --glass-stroke: 214 30% 70%;
+    --glass-stroke-opacity: 0.5;
+    --glass-highlight: 0 0% 100%;
+    --glass-highlight-opacity: 0.6;
+    --glass-shadow: 215 50% 40%;
+    --glass-shadow-opacity: 0.16;
+  }
+
+  .dark {
+    --background: 224 47% 5%;
+    --foreground: 210 40% 96%;
+    --card: 222 40% 8%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 44% 7%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 192 92% 55%;
+    --primary-foreground: 224 60% 6%;
+    --secondary: 220 24% 14%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 220 20% 13%;
+    --muted-foreground: 215 18% 62%;
+    --accent: 220 26% 16%;
+    --accent-foreground: 192 90% 76%;
+    --destructive: 358 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 68% 46%;
+    --success-foreground: 224 60% 6%;
+    --warning: 38 92% 56%;
+    --border: 217 30% 16%;
+    --input: 217 26% 19%;
+    --ring: 192 92% 55%;
+
+    --sidebar: 223 45% 6%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-accent: 220 26% 14%;
+    --sidebar-border: 217 30% 13%;
+
+    --aurora-1: 192 95% 55%;
+    --aurora-2: 256 90% 66%;
+    --aurora-3: 158 80% 48%;
+    --polar-glow: 192 95% 60%;
+
+    --glass-bg: 222 44% 10%;
+    --glass-bg-opacity: 0.55;
+    --glass-stroke: 210 60% 92%;
+    --glass-stroke-opacity: 0.08;
+    --glass-highlight: 210 60% 96%;
+    --glass-highlight-opacity: 0.05;
+    --glass-shadow: 224 80% 2%;
+    --glass-shadow-opacity: 0.7;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow: hidden;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.28);
+    color: hsl(var(--foreground));
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.015em;
+  }
+
+  /* Focus ring — futuristic, accessible */
+  :focus-visible {
+    outline: none;
+  }
+
+  input,
+  textarea,
+  select {
+    color-scheme: light dark;
+  }
+}
+
+/* ── Keyframes ─────────────────────────────────────────────── */
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.85;
+  }
+  33% {
+    transform: translate3d(4%, -3%, 0) scale(1.12);
+    opacity: 1;
+  }
+  66% {
+    transform: translate3d(-3%, 2%, 0) scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 hsl(var(--success) / 0.5);
+  }
+  50% {
+    opacity: 0.75;
+    box-shadow: 0 0 0 5px hsl(var(--success) / 0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Surfaces & effects ────────────────────────────────────── */
+@layer components {
+  .glass {
+    background-color: hsl(var(--glass-bg) / var(--glass-bg-opacity));
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid hsl(var(--glass-stroke) / var(--glass-stroke-opacity));
+    box-shadow:
+      inset 0 1px 0 0 hsl(var(--glass-highlight) / var(--glass-highlight-opacity)),
+      0 18px 48px -28px hsl(var(--glass-shadow) / var(--glass-shadow-opacity));
+  }
+
+  .glass-strong {
+    background-color: hsl(var(--glass-bg) / calc(var(--glass-bg-opacity) + 0.22));
+    -webkit-backdrop-filter: blur(28px) saturate(170%);
+    backdrop-filter: blur(28px) saturate(170%);
+    border: 1px solid hsl(var(--glass-stroke) / calc(var(--glass-stroke-opacity) + 0.08));
+    box-shadow:
+      inset 0 1px 0 0 hsl(var(--glass-highlight) / var(--glass-highlight-opacity)),
+      0 32px 80px -40px hsl(var(--glass-shadow) / calc(var(--glass-shadow-opacity) + 0.1));
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(
+      110deg,
+      hsl(var(--aurora-1)),
+      hsl(var(--aurora-2)) 55%,
+      hsl(var(--aurora-3))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--foreground) / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--foreground) / 0.045) 1px, transparent 1px);
+    background-size: 46px 46px;
+  }
+
+  .glow {
+    box-shadow: 0 0 24px -4px hsl(var(--primary) / 0.45);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 14px -3px hsl(var(--primary) / 0.45);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 12px -1px hsl(var(--success) / 0.7);
+  }
+
+  .ring-glow {
+    box-shadow:
+      0 0 0 1px hsl(var(--primary) / 0.4),
+      0 0 22px -4px hsl(var(--primary) / 0.5);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
+    background-clip: content-box;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--foreground) / 0.06),
+      transparent
+    );
+    animation: shimmer 1.6s infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease both;
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .animate-scale-in {
+    animation: scale-in 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .animate-slide-in-right {
+    animation: slide-in-right 0.36s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .density-compact .compact-row {
+    @apply py-2;
+  }
+
+  .density-comfortable .comfortable-card {
+    @apply p-6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-fade-in-up,
+    .animate-scale-in,
+    .animate-slide-in-right,
+    .shimmer::after {
+      animation: none;
+    }
+  }
+}
